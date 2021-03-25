@@ -1,0 +1,16 @@
+{% extends 'testing_app/base.html' %}
+
+{% block title %}
+Question
+{% endblock %}
+
+{% block content %}
+    <h1>{{ questions.question }}</h1>
+    <form id="answers" action="{% url "test-details" topic_id next_pk %}" method="post">
+        {% csrf_token %}
+        {% for answer in questions.answer_set.all %}
+            <p><input type="checkbox" id="{{ answer.id }}" name="choice" value="{{ forloop.counter }}" form="answers"/>{{ answer.answer }}</p>
+            <label for="{{ answer.id }}">{% endfor %}</label>
+        <button type="submit" form="answers">Submit</button>
+    </form>
+{% endblock %}

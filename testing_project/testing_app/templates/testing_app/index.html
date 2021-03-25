@@ -1,0 +1,16 @@
+{% extends 'testing_app/base.html' %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block content %}
+    <h1>Topics</h1>
+    <ul>
+      {% for topic in topics %}
+      <li>
+        <a href="{% url "test-details" topic.id 1 %}">{{ topic.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock %}

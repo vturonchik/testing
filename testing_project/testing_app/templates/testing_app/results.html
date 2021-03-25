@@ -1,0 +1,18 @@
+{% extends 'testing_app/base.html' %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block content %}
+    <h1>Results</h1>
+    <br>
+    <br>
+    <h3>Correct answers: </h3><h4>{{ correct }}</h4>
+    <br>
+    <br>
+    <h3>Incorrect answers: </h3><h4>{{ incorrect }}</h4>
+    <br>
+    <br>
+    <h3>Accuracy: </h3><h4>{{ accuracy }}</h4>
+{% endblock %}
